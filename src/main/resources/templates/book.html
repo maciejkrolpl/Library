@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Book</th>
+            <th>Author</th>
+        </tr>
+        <tr>
+            <td th:utext = "${book.id}"></td>
+            <td th:utext = "${book.title}"></td>
+            <td th:utext ="${book.author == null ? '' : book.author.firstName + ' ' + book.author.lastName}"></td>
+        </tr>
+    </table>
+    <a th:href="@{'/html/books'}">Return to list</a>
+</div>
+
+</body>
+</html>
